@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h2>All Employees</h2>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>TelefonNo</th>
+                    <th>TCKNO</th>
+                    <th>Departman</th>
+                    <th>Görev</th>
+                    <th>Yaş</th>
+                </tr>
+                </thead>
+                <tr th:each="employee : ${employees}">
+                    <td th:text="${employee.getId()}">Id</td>
+                    <td th:text="${employee.getAd()}">Ad</td>
+                    <td th:text="${employee.getSoyad()}">Soyad</td>
+                    <td th:text="${employee.getTelefonNo()}">TelefonNo</td>
+                    <td th:text="${employee.getTCKNO()}">TCKNO</td>
+                    <td th:text="${employee.getDepartman()}">Departman</td>
+                    <td th:text="${employee.getGorev()}">Görev</td>
+                    <td th:text="${employee.getYas()}">Yaş</td>
+                </tr>
+            </table>
+
+        <script src="static/js/jquery-1.11.1.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+</body>
+</html>
